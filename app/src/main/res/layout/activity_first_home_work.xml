@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <Button
+        android:id="@+id/btn_completeOnlyNaverSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/disable"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="네이버 블로그가\n포함 되면"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_completeOnlyDaumSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/disable"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="다음 블로그가\n포함 되면"
+        app:layout_constraintStart_toEndOf="@id/btn_completeOnlyNaverSelect"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_selectCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="선택 수 0"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_completeOnlyDaumSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_completeOnlyDaumSelect"
+        app:layout_constraintTop_toTopOf="@+id/btn_completeOnlyDaumSelect" />
+
+    <Button
+        android:id="@+id/btn_completeFourCountSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/disable"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="최소 4개이상 \n선택 완료"
+        app:layout_constraintStart_toStartOf="@+id/btn_completeOnlyNaverSelect"
+        app:layout_constraintTop_toBottomOf="@id/btn_completeOnlyNaverSelect" />
+
+
+    <Button
+        android:id="@+id/btn_completeComplexSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/disable"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:text="블로그,다음 모두 \n선택 완료"
+        app:layout_constraintStart_toEndOf="@+id/btn_completeFourCountSelect"
+        app:layout_constraintTop_toBottomOf="@id/btn_completeOnlyDaumSelect" />
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/btn_completeFourCountSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_blogs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_divider"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
